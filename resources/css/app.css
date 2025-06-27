@@ -1,3 +1,261 @@
-h1{
-    font-size : 200px;
+
+/* General Reset & Font */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
+
+main {
+    flex: 1;
+    align-content: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* HEADER */
+.site-header {
+    background-color: #3b47d1;
+    padding: 15px 0;
+    color: white;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-box {
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.site-header nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.site-header nav a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+.site-footer {
+    background-color: #3b47d1;
+    color: #fff;
+    padding: 30px 0;
+    margin-top: 60px;
+    font-size: 14px;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1;
+}
+
+.footer-right{
+    text-align: end;
+    align-content: flex-end;
+}
+
+.footer-left h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+}
+
+.footer-left p,
+.footer-right p {
+    margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-flex,
+    .footer-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .logo-box {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+
+/* Content  Start */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+form {
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="hidden"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.content_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.thankyou-text {
+    flex: 1 1 60%;
+}
+
+.hello-text {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.thank-you {
+    font-size: 80px;
+    color: #2c3e50;
+    margin: 0 0 20px;
+}
+
+.email-note {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #444;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.thankyou-image {
+    flex: 1 1 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 250px;
+    height: 250px;
+    border: 3px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.split_container {
+    display: flex;
+    gap: 20px;              /* Optional spacing between left and right */
+    align-items: flex-start;
+}
+
+.left-column {
+    flex: 1;      
+    padding: 20px;
+}
+
+.right-column {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Content  End */
