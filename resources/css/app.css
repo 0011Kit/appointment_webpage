@@ -507,3 +507,169 @@ a:hover {
 }
 
 /* Content  End */
+
+ /* ===== Admin Dashboard Theme ===== */
+    .admin-container {
+        max-width: 1400px;
+        margin: 2rem auto;
+    }
+    
+    .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    
+    .admin-title {
+        color: #2c3e50;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    
+    /* ===== Filter Section ===== */
+    .filter-section {
+        max-width: 120%;
+        padding: 0 20px; 
+        border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+    
+    .filter-form {
+        width: 100%;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 1.5%;
+    }
+
+
+    
+    .filter-group {
+        margin-bottom: 0;
+    }
+    
+    .filter-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #495057;
+    }
+    
+    .filter-input {
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+    
+    .filter-actions {
+        display: flex;
+        gap: 0.75rem;
+        align-self: end;
+    }
+    
+    /* ===== Table Styling ===== */
+    .data-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .data-table thead {
+        background: #2c3e50;
+        color: white;
+    }
+    
+    .data-table th {
+        padding: 1rem;
+        text-align: left;
+        font-weight: 500;
+    }
+    
+    .data-table td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #e9ecef;
+        vertical-align: middle;
+    }
+    
+    .data-table tr:last-child td {
+        border-bottom: none;
+    }
+    
+    
+    
+    /* ===== Action Buttons ===== */
+    .action-buttons {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .action-buttons form{
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        outline: none;
+        box-shadow: none;
+        appearance: none;
+    }
+
+    .action-buttons  button img {
+        display: inline-block;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .action-buttons button {
+        padding: 1.0%;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        outline: none;
+        box-shadow: none;
+        appearance: none;
+    }
+
+    .action-buttons button:focus {
+        outline: none;
+    }
+
+
+   
+    
+    /* ===== Empty State ===== */
+    .empty-state {
+        text-align: center;
+        padding: 2rem;
+        color: #6c757d;
+    }
+    
+    /* ===== Responsive Adjustments ===== */
+    @media (max-width: 768px) {
+        .filter-form {
+            grid-template-columns: 1fr;
+        }
+        
+        .data-table {
+            display: block;
+            overflow-x: auto;
+        }
+        
+        .admin-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+    }

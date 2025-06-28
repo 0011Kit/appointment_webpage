@@ -13,8 +13,7 @@
     </div>
 
     <div >
-        <form class="appointment-form" id="appointment-form">
-            
+        <form class="appointment-form" id="appointment-form">            
             <div class="form-columns">
                 <div class="form-left">
                     <label for="calendar">Select Date:</label>
@@ -24,6 +23,7 @@
                     <p class="selected-date-msg">You picked: <span id="picked-date">none</span></p>
                 </div>
                 <div class="form-right">
+                    <input type="hidden" name="topic" id="topic" value="{{ $topic }}">
                     <label>Select Time:</label>
                     <p class="note">Please note that One(1) time slot is 30 minutes.</p>
                     <label for="timeFrom">From:</label>
@@ -102,6 +102,8 @@
             const date = $('#date').val();
             const timeFrom = $('#timeFrom').val().replace(/:/g, '-');
             const timeTo = $('#timeTo').val().replace(/:/g, '-');
+            const topic = document.getElementById('topic').value;
+
 
             if (!date || !timeFrom || !timeTo) {
                 alert("Please select date and both times.");
@@ -109,7 +111,7 @@
             }
 
             const datetime = `${date}_${timeFrom}_${timeTo}`;
-            const url = `/dashboard/appointment_webpage/public/formpage/${encodeURIComponent(datetime)}`;
+            const url = `/dashboard/appointment_webpage/public/formpage/${encodeURIComponent(datetime)}/${topic}`;
             window.location.href = url;
         });
     });

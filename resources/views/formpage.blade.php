@@ -9,14 +9,19 @@
     <div class="contact-box" >
         <h2 class="section-title">Appointment planned on </h2>
         <br>
+        <h5>Topic : <span> {{$topic}} </span></h5>
+        <br>
         <h5>DATE : <span> {{$date}} </span></h5>
         <br>
         <h5>Time : <span> {{$timeFrom}}  to {{$timeTo}}</span></h5>
     </div>
 
-    <form method="POST" action="{{ url('/formsubmitted') }}">
+    <form method="POST" action="{{ route('formsubmitted') }}">
         @csrf
-        <input type="hidden" id="datetime" name="appointment_datetime" value="{{ $datetime }}">
+        <input type="hidden" id="app_date" name="app_date" value="{{ $date }}">
+        <input type="hidden" id="app_timefrom" name="app_timefrom" value="{{ $timeFrom }}">
+        <input type="hidden" id="app_timeTo" name="app_timeTo" value="{{ $timeTo }}">
+        <input type="hidden" id="topic" name="topic" value="{{ $topic }}">
 
         <label>Your Name:</label>
         <div class="split_container">
@@ -39,10 +44,12 @@
         <br>
         <label>Your Phone No:</label>
         <input type="tel" id="phone" name="phone" placeholder="Enter Phone">
+        <br>
+        <label>Description:</label>
+        <input type="text" id="desc" name="desc" placeholder="Enter the purpose of the appointment" required>
         <br><br>
         <button type="submit" >Confirm Appointment</button>
     </form>
-        
 </div>
 
 @endsection
