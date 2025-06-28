@@ -13,7 +13,27 @@ use Illuminate\Http\Request;
 */
 Route::get('/', function () {
     return view('home');
-})->name("homepage");
+})->name("home");
+
+
+
+/* //////// ::  Contact :: ///////////// 
+*/
+Route::get('/contact/{topic}', function ($topic) {
+   
+    if($topic == null){
+        return view('contact',[
+        'topic' => "My Projects"
+    ]);
+    }else{     
+        return view('contact',[
+            'topic' => $topic
+        ]);
+    }
+})->name('contact.topic');
+/////////////////////////////////////////////////////////
+
+
 
 
 /* ///////////// ::  Appointment Form Page :: ///////////// 
@@ -72,6 +92,7 @@ Route::post('/formsubmitted', function (Request $request) {
     ]);
 })->name('formsubmitted');
 /////////////////////////////////////////////////
+
 
 
 

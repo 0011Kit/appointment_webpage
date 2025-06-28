@@ -12,14 +12,14 @@
         <h3>Your appointment has been submitted.</h3>
         <p class="email-note">
             The confirmation email will be sent to (Email Address: <strong>{{ $email }}</strong>) 
-            soon once your appointment is approved.
+            soon.            
         </p>
-        <a href="{{ route('homepage') }}" class="back-link">Go back to homepage</a>
+        <a href="{{ route('home') }}" class="back-link">Go back to homepage</a>
     </div>
     
     <div class="thankyou-image">
         <div class="image-placeholder">
-            <span>Picture</span>
+            <img  class="round-image" src="{{ asset('/images/hand_shake.jpg') }}" alt="shake hand"/>
         </div>
     </div>
 </div>

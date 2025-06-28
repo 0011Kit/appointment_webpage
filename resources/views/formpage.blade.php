@@ -5,9 +5,15 @@
 @endsection
 
 @section('main_content')
-<h2>Appointment on {{$date}} From {{$timeFrom}} To {{$timeTo}}</h2>
+<div class="contact-content-wrapper">
+    <div class="contact-box" >
+        <h2 class="section-title">Appointment planned on </h2>
+        <br>
+        <h5>DATE : <span> {{$date}} </span></h5>
+        <br>
+        <h5>Time : <span> {{$timeFrom}}  to {{$timeTo}}</span></h5>
+    </div>
 
-    <div class="content_container">
     <form method="POST" action="{{ url('/formsubmitted') }}">
         @csrf
         <input type="hidden" id="datetime" name="appointment_datetime" value="{{ $datetime }}">
