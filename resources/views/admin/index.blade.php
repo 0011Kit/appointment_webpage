@@ -63,6 +63,7 @@
                 <th>Planned Date</th>
                 <th>Planned Time</th>
                 <th>Description</th>
+                <th>Status</th>
                 <th>Submitted At</th>
             </tr>
         </thead>
@@ -73,14 +74,14 @@
                         <a href="{{ route('admin.edit', $visitor->id) }}" >
                             <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Edit" width="16">
                         </a>
-                        <form method="POST" action="{{ route('admin.destroy', $visitor->id) }}" onsubmit="return confirm('Are you sure to delete the record from {{ $visitor->name }} (Email :  {{ $visitor->email }} )?')">
+                        <form method="POST" action="{{ route('admin.destroy', $visitor->id) }}" onsubmit="return confirm('Are you sure to delete the record from {{ $visitor->name }} (Email :  {{ $visitor->email }} ) for {{ $visitor->desc}}?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit"  >
                                 <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete" width="16">
-                            </button>                            
+                            </button>
                         </form>
-                        <form method="POST" action="{{ route('admin.sendEmail', $visitor->id) }}" onsubmit="return confirm('Send email to {{ $visitor->email }}?')" style="display: inline;">
+                        <form method="POST" action="{{ route('admin.sendEmail', $visitor->id) }}" onsubmit="return confirm('Send confirmation email to {{ $visitor->email }}?')" style="display: inline;">
                             @csrf
                             <button type="submit" style="background:none; border:none; padding:0;">
                                 <img src="https://cdn-icons-png.flaticon.com/512/725/725643.png" alt="Send Email" width="16">
@@ -94,6 +95,7 @@
                     <td>{{ $visitor->app_date }}</td>
                     <td>{{ $visitor->app_timeFrom }} - {{ $visitor->app_timeTo }}</td>
                     <td>{{ Str::limit($visitor->desc, 50) }}</td>
+                    <td>{{ $visitor->record_status }}</td>
                     <td>{{ $visitor->created_at->format('Y-m-d H:i') }}</td>
                 </tr>
             @empty

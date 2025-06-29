@@ -26,13 +26,15 @@ class VisitorReplyMail extends Mailable
 
      public function build()
     {
-        return $this->subject('Thank you for your inquiry')
+        return $this->from('no-reply@kyappointments.test', 'KY Appointment System')
+                    ->subject('Thank you for your inquiry')
                     ->markdown('emails.visitor.reply')
                     ->with([
+                        'title' => $this->visitor->title,
                         'name' => $this->visitor->name,
                         'desc' => $this->visitor->desc,
                         'app_date' => $this->visitor->app_date,
-                        'app_timefrom' => $this->visitor->app_timefrom,
+                        'app_timeFrom' => $this->visitor->app_timeFrom,
                         'app_timeTo' => $this->visitor->app_timeTo
                     ]);
     }

@@ -59,7 +59,9 @@ Route::post('/formsubmitted', [VisitorController::class, 'store'])->name('formsu
 
 //////// ::  Admin Page :: ///////////// 
 // 1. Admin Index Page
-Route::resource('admin', VisitorController::class);
+Route::resource('admin', VisitorController::class)->parameters([
+    'admin' => 'visitor'
+]);
 // 2. Admin Send Email Router
 Route::post('/admin/{visitor}/send-email', [VisitorController::class, 'sendEmail'])->name('admin.sendEmail');
 
