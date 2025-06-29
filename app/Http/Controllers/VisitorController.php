@@ -126,7 +126,13 @@ class VisitorController extends Controller
 
     public function sendEmail(Visitor $visitor)
     {
-        try {            
+        try {        
+             // Check status before sending
+            if ($visitor->record_status !== 'ACTC') {
+                return redirect()->route('admin.index')
+                    ->with('error', 'Cannot send email where this record status is not ACTC.');
+            }    
+
             // Log visitor data to check values
             Log::info("Visitor: ", $visitor->toArray());
 
